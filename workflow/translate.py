@@ -31,7 +31,7 @@ parser.add_argument(
     type=str,
     help="mode",
     required=True,
-    choices=["mode","awareness"]
+    choices=["bias","awareness"]
 )
 args = parser.parse_args()
 mode = args.mode
