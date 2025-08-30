@@ -24,5 +24,5 @@ for key, value in id2origin.items():
         write_dic[value["key"]].append(value)
     else:
         write_dic[value["key"]] = [value]
-json.dump(write_dic,open(f"../data/{mode}_translated_large.json","w",encoding="utf-8"),ensure_ascii=False,indent=4)
+json.dump(write_dic,open(f"../data/{mode}.json","w",encoding="utf-8"),ensure_ascii=False,indent=4)
 

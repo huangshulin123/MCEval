@@ -8,8 +8,8 @@ from src.models import LLMModel
 
 
 map_prompts = json.load(open("../prompt/test_prompt.json","r",encoding="utf-8"))
-map = {"awareness":"../data/awareness_translated_large.json",
-       "bias":"../data/bias_translated_large.json"}
+map = {"awareness":"../data/awareness.json",
+       "bias":"../data/bias.json"}
 parser = argparse.ArgumentParser(description="DAG")
 
 parser.add_argument(
@@ -47,8 +47,8 @@ openai_list = ["o1-preview","o1-mini","yi-lightning","gpt-4-turbo","gpt-4o","o1-
 
 
 model_name = Eval_model.split("/")[-1]
-if os.path.exists(f"../data/_out{mode}_{model_name}_out.json"):
-    f = open(f"../data/_out{mode}_{model_name}_out.json", "r",encoding="utf-8")
+if os.path.exists(f"../data/{mode}_{model_name}_out.json"):
+    f = open(f"../data/{mode}_{model_name}_out.json", "r",encoding="utf-8")
     already_file = json.load(f)
     if Eval_model in openai_list:
         dic_id = {}
